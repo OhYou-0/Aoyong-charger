@@ -1,0 +1,15 @@
+capture_id,frame,register,label,scale,status,note
+bench_idle,0xDA,0,battery_voltage,V x0.1,confirmed,Tracks battery voltage.
+bench_solar_input,0xDA,1,pv_voltage,V x0.1,confirmed,Tracks bench PV input voltage.
+meter_check,0xDA,2,battery_current,A x0.1,confirmed,External meter confirmed this is battery/output current; PV current is derived.
+live_charge,derived,,pv_amps,A,estimated,Estimated as battery volts * battery amps * 1.0526 / PV volts.
+live_charge,derived,,pv_watts,W,estimated,Estimated as PV volts * estimated PV amps.
+live_charge,0xDA,3,power_raw_or_unused,raw,rejected,Stayed zero while charging.
+live_charge,0xDA,4,charge_state_raw,raw,candidate,Observed different values between idle and charging.
+live_charge,0xDA,6,mosfet_temperature,C,confirmed,Displayed as MOSFET/controller temperature.
+live_charge,0xDA,9,battery_soc_candidate,percent,candidate,Behaves like state of charge percent.
+live_charge,0xDA,11,charge_active_flag,raw,candidate,Observed different values between idle and charging.
+future_long_span,unknown,,daily_energy_wh,Wh,unknown,Needs captures separated by hours.
+future_long_span,unknown,,total_energy_kwh,kWh,unknown,Needs captures separated by days or enough production.
+short_span_rejected,0xDA,15,daily_energy_wh_candidate,Wh,rejected,Did not track the display daily energy value.
+short_span_rejected,0x03,0,total_energy_kwh_candidate,kWh,rejected,Did not track the display total energy value.
